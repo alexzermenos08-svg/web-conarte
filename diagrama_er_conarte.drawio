@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ER ConArte" id="er-conarte">
+    <mxGraphModel dx="1099" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="categorias" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#F4E9D8;strokeColor=#B8892B;fontColor=#1B2A4A;" value="categorias" vertex="1">
+          <mxGeometry height="140" width="220" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="cat1" parent="categorias" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="id_categoria (PK) - INT" vertex="1">
+          <mxGeometry height="26" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cat2" parent="categorias" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="nombre - VARCHAR(100)" vertex="1">
+          <mxGeometry height="26" width="220" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cat3" parent="categorias" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="descripcion - VARCHAR(255)" vertex="1">
+          <mxGeometry height="26" width="220" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="proyectos" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#F4E9D8;strokeColor=#B8892B;fontColor=#1B2A4A;" value="proyectos" vertex="1">
+          <mxGeometry height="220" width="260" x="340" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pro1" parent="proyectos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="id_proyecto (PK) - INT" vertex="1">
+          <mxGeometry height="26" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pro2" parent="proyectos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;fontColor=#993C1D;" value="id_categoria (FK) - INT" vertex="1">
+          <mxGeometry height="26" width="260" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pro3" parent="proyectos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="nombre - VARCHAR(150)" vertex="1">
+          <mxGeometry height="26" width="260" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="pro4" parent="proyectos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="descripcion - TEXT" vertex="1">
+          <mxGeometry height="26" width="260" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pro5" parent="proyectos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="ubicacion - VARCHAR(150)" vertex="1">
+          <mxGeometry height="26" width="260" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="pro6" parent="proyectos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="fecha_proyecto - DATE" vertex="1">
+          <mxGeometry height="26" width="260" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pro7" parent="proyectos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="destacado - TINYINT(1)" vertex="1">
+          <mxGeometry height="26" width="260" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="imagenes" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#F4E9D8;strokeColor=#B8892B;fontColor=#1B2A4A;" value="imagenes" vertex="1">
+          <mxGeometry height="140" width="240" x="680" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="img1" parent="imagenes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="id_imagen (PK) - INT" vertex="1">
+          <mxGeometry height="26" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="img2" parent="imagenes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;fontColor=#993C1D;" value="id_proyecto (FK) - INT" vertex="1">
+          <mxGeometry height="26" width="240" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="img3" parent="imagenes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="ruta_archivo - VARCHAR(255)" vertex="1">
+          <mxGeometry height="26" width="240" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="img4" parent="imagenes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="orden - INT" vertex="1">
+          <mxGeometry height="26" width="240" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="contactos" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#1B2A4A;" value="contactos" vertex="1">
+          <mxGeometry height="140" width="220" x="40" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="con1" parent="contactos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="id_contacto (PK) - INT" vertex="1">
+          <mxGeometry height="26" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="con2" parent="contactos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="nombre - VARCHAR(150)" vertex="1">
+          <mxGeometry height="26" width="220" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="con3" parent="contactos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="mensaje - TEXT" vertex="1">
+          <mxGeometry height="26" width="220" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="con4" parent="contactos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="atendido - TINYINT(1)" vertex="1">
+          <mxGeometry height="26" width="220" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="chatbot" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#1B2A4A;" value="chatbot_faq" vertex="1">
+          <mxGeometry height="140" width="240" x="340" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="faq1" parent="chatbot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="id_faq (PK) - INT" vertex="1">
+          <mxGeometry height="26" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="faq2" parent="chatbot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="pregunta - VARCHAR(255)" vertex="1">
+          <mxGeometry height="26" width="240" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="faq3" parent="chatbot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="respuesta - TEXT" vertex="1">
+          <mxGeometry height="26" width="240" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="faq4" parent="chatbot" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="palabras_clave - VARCHAR(255)" vertex="1">
+          <mxGeometry height="26" width="240" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="usuarios" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#1B2A4A;" value="usuarios" vertex="1">
+          <mxGeometry height="140" width="240" x="680" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="usr1" parent="usuarios" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="id_usuario (PK) - INT" vertex="1">
+          <mxGeometry height="26" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="usr2" parent="usuarios" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="nombre - VARCHAR(100)" vertex="1">
+          <mxGeometry height="26" width="240" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="usr3" parent="usuarios" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="correo - VARCHAR(150)" vertex="1">
+          <mxGeometry height="26" width="240" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="usr4" parent="usuarios" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=12;" value="rol - ENUM(&#39;admin&#39;,&#39;editor&#39;)" vertex="1">
+          <mxGeometry height="26" width="240" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="categorias" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1B2A4A;fontColor=#1B2A4A;endArrow=none;startArrow=none;" target="proyectos" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="proyectos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1B2A4A;fontColor=#1B2A4A;endArrow=none;startArrow=none;" target="imagenes" value="1:N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
