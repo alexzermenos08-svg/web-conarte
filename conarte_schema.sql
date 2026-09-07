@@ -100,14 +100,16 @@ CREATE INDEX idx_imagenes_proyecto   ON imagenes(id_proyecto);
 CREATE INDEX idx_contactos_atendido  ON contactos(atendido);
 
 -- ---------------------------------------------------------
--- Datos semilla mínimos para poder probar el sitio de inmediato
+-- Datos semilla: categorías reales del portafolio de ConArte
+-- (ajustadas el 07-sep-2026 tras recibir el material institucional)
 -- ---------------------------------------------------------
 INSERT INTO categorias (nombre, descripcion) VALUES
-  ('Gobierno',      'Obras para instituciones gubernamentales'),
-  ('Templos',       'Construcción y remodelación de templos religiosos'),
-  ('Bachilleratos', 'Infraestructura educativa de nivel medio superior'),
-  ('Residencial',   'Proyectos de vivienda y desarrollos residenciales'),
-  ('Industrial',    'Naves y complejos industriales');
+  ('Educativo',               'Escuelas de todos los niveles, universidad y centros de desarrollo educativo'),
+  ('Gobierno y Obra Pública', 'Infraestructura urbana, drenaje, plazoletas y edificios municipales'),
+  ('Residencial',             'Casas habitación, fraccionamientos y vivienda de interés social'),
+  ('Industrial',              'Naves industriales y plantas de producción'),
+  ('Comercial',               'Locales comerciales, franquicias y oficinas corporativas'),
+  ('Institucional',           'Proyectos institucionales y de asociaciones civiles');
 
 INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES
   ('Admin ConArte', 'admin@conarte.mx', '$2y$10$CAMBIAR_ESTE_HASH_EN_PHP', 'admin');
