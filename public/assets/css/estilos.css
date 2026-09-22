@@ -1,8 +1,278 @@
 :root {
-    --azul-marino: #1B2A4A;
-    --dorado: #B8892B;
+  --verde-petroleo: #004236;
+  --verde-petroleo-claro: #0a5c4c;
+  --verde-oliva: #709305;
+  --verde-oliva-claro: #8ab30a;
+  --verde-bosque: #3D752C;
+  --gris-texto: #3d3d3a;
+  --fondo-claro: #f7f8f5;
+  --blanco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--gris-texto);
+  background-color: var(--fondo-claro);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-conarte {
+  background-color: var(--verde-petroleo);
+  padding: 0.6rem 1.5rem;
+}
+
+.navbar-conarte .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-conarte .logo-badge {
+  background-color: var(--blanco);
+  border-radius: 8px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar-conarte .logo-badge img {
+  height: 34px;
+  display: block;
+}
+
+.navbar-conarte .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+.navbar-conarte .navbar-nav .nav-link:hover,
+.navbar-conarte .navbar-nav .nav-link.active {
+  color: var(--verde-oliva-claro) !important;
+}
+
+.navbar-conarte .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== HERO ===== */
+.hero-conarte {
+  background: linear-gradient(135deg, var(--verde-petroleo) 0%, #072e26 100%);
+  color: var(--blanco);
+  padding: 4.5rem 1.5rem;
+}
+
+.hero-conarte h1 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-conarte p.lead {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  max-width: 640px;
+}
+
+.hero-conarte .btn-oliva {
+  background-color: var(--verde-oliva);
+  border-color: var(--verde-oliva);
+  color: var(--blanco);
+  font-weight: 600;
+  padding: 0.6rem 1.6rem;
+}
+
+.hero-conarte .btn-oliva:hover {
+  background-color: var(--verde-oliva-claro);
+  border-color: var(--verde-oliva-claro);
+  color: var(--blanco);
+}
+
+/* ===== SECCIONES ===== */
+.seccion {
+  padding: 3.5rem 1.5rem;
+}
+
+.seccion-titulo {
+  color: var(--verde-bosque);
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+}
+
+.seccion-alterna {
+  background-color: var(--blanco);
+}
+
+/* ===== TARJETAS DE CATEGORÍA / PROYECTO ===== */
+.card-conarte {
+  background-color: var(--blanco);
+  border: 1px solid #e4e6e0;
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-conarte:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 66, 54, 0.12);
+}
+
+.card-conarte h3, .card-conarte h5 {
+  color: var(--verde-bosque);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.card-conarte .badge-categoria {
+  display: inline-block;
+  background-color: var(--verde-oliva);
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.card-conarte .card-ubicacion {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* ===== FILTROS PORTAFOLIO ===== */
+.filtros-categoria .btn {
+  border-color: var(--verde-petroleo);
+  color: var(--verde-petroleo);
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  margin: 0 0.35rem 0.5rem 0;
+}
+
+.filtros-categoria .btn:hover,
+.filtros-categoria .btn.active {
+  background-color: var(--verde-petroleo);
+  color: var(--blanco);
+}
+
+/* ===== VALORES / MISIÓN-VISIÓN (Trayectoria) ===== */
+.valor-item {
+  border-left: 4px solid var(--verde-oliva);
+  padding: 0.25rem 0 0.25rem 1.1rem;
+  margin-bottom: 1.4rem;
+}
+
+.valor-item h4 {
+  color: var(--verde-bosque);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.mv-card {
+  background-color: var(--verde-petroleo);
+  color: var(--blanco);
+  border-radius: 10px;
+  padding: 1.75rem;
+  height: 100%;
+}
+
+.mv-card h3 {
+  color: var(--verde-oliva-claro);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* ===== FORMULARIO DE CONTACTO ===== */
+.form-conarte label {
+  font-weight: 600;
+  color: var(--verde-bosque);
+  margin-bottom: 0.3rem;
+}
+
+.form-conarte .form-control {
+  border-radius: 8px;
+  border: 1px solid #cfd3c9;
+  padding: 0.6rem 0.85rem;
+}
+
+.form-conarte .form-control:focus {
+  border-color: var(--verde-oliva);
+  box-shadow: 0 0 0 0.2rem rgba(112, 147, 5, 0.18);
+}
+
+.btn-conarte {
+  background-color: var(--verde-oliva);
+  border: none;
+  color: var(--blanco);
+  font-weight: 600;
+  padding: 0.65rem 1.8rem;
+  border-radius: 8px;
+}
+
+.btn-conarte:hover {
+  background-color: var(--verde-oliva-claro);
+  color: var(--blanco);
+}
+
+.alert-conarte-exito {
+  background-color: #eaf3de;
+  border: 1px solid var(--verde-oliva);
+  color: var(--verde-bosque);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+}
+
+.info-contacto-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+  align-items: flex-start;
+}
+
+.info-contacto-item strong {
+  color: var(--verde-bosque);
+  display: block;
+}
+
+/* ===== FOOTER ===== */
+.footer-conarte {
+  background-color: var(--verde-petroleo);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 1.5rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-conarte h5 {
+  color: var(--blanco);
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+
+.footer-conarte a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-conarte a:hover {
+  color: var(--verde-oliva-claro);
+}
+
+.footer-conarte .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
 }

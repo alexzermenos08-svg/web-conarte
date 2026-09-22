@@ -1,38 +1,49 @@
-<div class="container py-5">
-    <h1>Portafolio de proyectos</h1>
+<section class="seccion">
+    <div class="container">
+        <h1 class="seccion-titulo">Portafolio de proyectos</h1>
 
-    <div class="mb-4">
-        <button class="btn btn-outline-dark btn-sm filtro-categoria" data-id="">Todos</button>
-        <?php foreach ($categorias as $categoria): ?>
-            <button class="btn btn-outline-dark btn-sm filtro-categoria" data-id="<?= $categoria['id_categoria'] ?>">
-                <?= htmlspecialchars($categoria['nombre']) ?>
-            </button>
-        <?php endforeach; ?>
-    </div>
+        <div class="filtros-categoria mb-4">
+            <button class="btn active" data-id="">Todos</button>
+            <?php foreach ($categorias as $categoria): ?>
+                <button class="btn" data-id="<?= $categoria['id_categoria'] ?>">
+                    <?= htmlspecialchars($categoria['nombre']) ?>
+                </button>
+            <?php endforeach; ?>
+        </div>
 
-    <div class="row" id="lista-proyectos">
-        <?php foreach ($proyectos as $proyecto): ?>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= htmlspecialchars($proyecto['nombre']) ?></h5>
-                        <p class="card-subtitle text-muted mb-2"><?= htmlspecialchars($proyecto['categoria_nombre']) ?></p>
-                        <p class="card-text"><?= htmlspecialchars($proyecto['descripcion'] ?? '') ?></p>
+        <div class="row g-4" id="lista-proyectos">
+            <?php foreach ($proyectos as $proyecto): ?>
+                <div class="col-md-6 col-lg-4 tarjeta-proyecto" data-categoria="<?= $proyecto['id_categoria'] ?>">
+                    <div class="card-conarte">
+                        <span class="badge-categoria"><?= htmlspecialchars($proyecto['categoria_nombre']) ?></span>
+                        <h3><?= htmlspecialchars($proyecto['nombre']) ?></h3>
+                        <p class="card-ubicacion mb-2">📍 <?= htmlspecialchars($proyecto['ubicacion']) ?></p>
+                        <p><?= htmlspecialchars($proyecto['descripcion']) ?></p>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+        <p class="text-muted mt-3" id="mensaje-vacio" style="display:none;">No hay proyectos en esta categoría todavía.</p>
     </div>
-</div>
+</section>
 
 <script>
-// Ejemplo mínimo de filtro dinámico llamando al endpoint ProyectosController::porCategoria
-document.querySelectorAll('.filtro-categoria').forEach(btn => {
-    btn.addEventListener('click', async () => {
-        const id = btn.dataset.id;
-        const url = id ? `/proyectos/porCategoria/${id}` : '/proyectos';
-        // Aquí iría la llamada fetch real y el renderizado dinámico de tarjetas
-        console.log('Filtrar por categoría:', id || 'todas', url);
+// Filtro dinámico en el cliente (sin recargar la página), como pide el requerimiento funcional #2.
+document.querySelectorAll('.filtros-categoria .btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filtros-categoria .btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const idSeleccionado = btn.dataset.id;
+        let visibles = 0;
+
+        document.querySelectorAll('.tarjeta-proyecto').forEach(tarjeta => {
+            const coincide = !idSeleccionado || tarjeta.dataset.categoria === idSeleccionado;
+            tarjeta.style.display = coincide ? '' : 'none';
+            if (coincide) visibles++;
+        });
+
+        document.getElementById('mensaje-vacio').style.display = visibles === 0 ? 'block' : 'none';
     });
 });
 </script>
