@@ -1,0 +1,8 @@
+Coloca aquí las fotos del carrusel del encabezado de la página de Inicio.
+
+Recomendaciones:
+- Formato horizontal (apaisado), de preferencia 1920 x 800 px o más grande.
+- Formato JPG, y que cada archivo pese menos de 500 KB para que cargue rápido.
+- Nombres sin espacios ni acentos, por ejemplo: obra1.jpg, obra2.jpg.
+
+Después registra cada foto en la tabla carrusel_imagenes (ver cambios_octubre.sql).
