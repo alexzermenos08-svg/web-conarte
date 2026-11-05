@@ -70,6 +70,15 @@ class Auth
         unset($_SESSION['fallos'], $_SESSION['csrf']);
     }
 
+    // Actualiza en la sesión los datos del usuario (por ejemplo, si cambia su nombre).
+    public static function refrescarUsuario(array $datos): void
+    {
+        self::iniciarSesion();
+        if (!empty($_SESSION[self::CLAVE_USUARIO])) {
+            $_SESSION[self::CLAVE_USUARIO] = array_merge($_SESSION[self::CLAVE_USUARIO], $datos);
+        }
+    }
+
     public static function logout(): void
     {
         self::iniciarSesion();

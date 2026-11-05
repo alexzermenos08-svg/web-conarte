@@ -13,6 +13,23 @@ class ProyectosController extends Controller
         ]);
     }
 
+    // /proyectos/ver/12  → página de detalle con la galería de fotos
+    public function ver($id): void
+    {
+        $proyecto = (new Proyecto())->obtenerConCategoria((int) $id);
+
+        if (!$proyecto) {
+            http_response_code(404);
+            $this->render('errores/404');
+            return;
+        }
+
+        $this->render('proyectos/ver', [
+            'proyecto' => $proyecto,
+            'imagenes' => (new Imagen())->deProyecto((int) $proyecto['id_proyecto']),
+        ]);
+    }
+
     // Ejemplo de endpoint que el frontend puede llamar vía fetch() para filtrar sin recargar
     public function porCategoria($idCategoria = null): void
     {

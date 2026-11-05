@@ -238,3 +238,160 @@ a { text-decoration: none; }
   .panel-menu { flex-direction: row; flex-wrap: wrap; flex: none; margin-bottom: 1rem; }
   .panel-contenido { padding: 1.25rem; }
 }
+
+/* ===== ENCABEZADOS Y FORMULARIOS DEL PANEL ===== */
+.panel-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.panel-contenido .form-label { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; }
+
+.panel-contenido .form-control,
+.panel-contenido .form-select {
+  border: 1px solid #B8C6CE;
+  border-radius: 8px;
+}
+
+.panel-contenido .form-control:focus,
+.panel-contenido .form-select:focus {
+  border-color: var(--lima);
+  box-shadow: 0 0 0 0.2rem rgba(138, 182, 29, 0.25);
+}
+
+.panel-contenido .form-check-input:checked {
+  background-color: var(--bosque);
+  border-color: var(--bosque);
+}
+
+.btn-panel-sec {
+  background: #fff;
+  border: 1px solid #B8C6CE;
+  color: var(--grafito);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn-panel-sec:hover { background: var(--niebla); border-color: var(--grafito); color: var(--grafito); }
+
+.btn-peligro {
+  background: #fff;
+  border: 1px solid #D9A5A5;
+  color: #9B2C2C;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn-peligro:hover { background: #FCEBEB; border-color: #9B2C2C; color: #7A1F1F; }
+
+.btn-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--texto-suave);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.btn-icono:hover { background: var(--niebla); color: var(--grafito); }
+.btn-icono.peligro:hover { background: #FCEBEB; color: #9B2C2C; }
+
+.enlace-fila { color: var(--grafito); font-weight: 600; }
+.enlace-fila:hover { color: var(--bosque); }
+.texto-chico { font-size: 0.82rem; color: var(--texto-suave); }
+.estrella { color: #C99A06; }
+
+.panel-enlace .insignia {
+  margin-left: auto;
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--lima);
+  color: var(--grafito);
+  padding: 1px 8px;
+  border-radius: 10px;
+}
+
+.filtros .form-label { margin-bottom: 0.2rem; }
+
+.metrica-enlace { display: block; color: inherit; }
+.metrica-enlace:hover { border-color: var(--bosque); color: inherit; }
+
+/* ===== TABLAS ===== */
+.fila-pendiente td { background: #F8FBEE; }
+.fila-inactiva td { color: #8FA0AB; }
+.estado-inactivo { background: #E6EAEC; color: #5B6B75; }
+
+/* ===== PESTAÑAS ===== */
+.pestanas { gap: 0.5rem; }
+.pestanas .nav-link {
+  color: var(--grafito);
+  border: 1px solid #B8C6CE;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  background: #fff;
+}
+.pestanas .nav-link:hover { border-color: var(--grafito); }
+.pestanas .nav-link.active { background: var(--grafito); color: #fff; border-color: var(--grafito); }
+
+/* ===== GALERÍA DE FOTOS DEL PROYECTO ===== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.galeria-item { border: 1px solid var(--linea); border-radius: 10px; padding: 0.6rem; background: #fff; }
+
+.galeria-foto { position: relative; }
+.galeria-foto img { width: 100%; height: 150px; object-fit: cover; border-radius: 6px; display: block; }
+
+.galeria-portada {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--lima);
+  color: var(--grafito);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 10px;
+}
+
+/* ===== CARRUSEL ===== */
+.carrusel-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #fff;
+}
+
+.carrusel-fila.inactiva { opacity: 0.6; background: #F7F8F9; }
+.carrusel-miniatura { width: 170px; height: 80px; object-fit: cover; border-radius: 6px; }
+.carrusel-datos { flex: 1; min-width: 260px; }
+
+/* ===== DETALLE DE MENSAJE ===== */
+.datos { display: grid; grid-template-columns: 110px 1fr; gap: 0.5rem 1rem; margin-bottom: 1.5rem; }
+.datos dt { color: var(--texto-suave); font-weight: 500; font-size: 0.9rem; }
+.datos dd { margin: 0; }
+
+.mensaje-texto {
+  background: var(--niebla);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  line-height: 1.6;
+}

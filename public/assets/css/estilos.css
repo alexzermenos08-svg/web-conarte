@@ -400,3 +400,77 @@ a {
     font-size: 1.8rem;
   }
 }
+
+/* ===== TARJETAS DE PROYECTO CON FOTO ===== */
+.card-proyecto {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-proyecto .card-cuerpo {
+  padding: 1.25rem 1.4rem;
+}
+
+.card-foto {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-enlace {
+  color: inherit;
+  display: block;
+}
+
+.card-enlace:hover h3 {
+  color: var(--bosque);
+}
+
+/* ===== DETALLE DE PROYECTO ===== */
+.enlace-hero {
+  color: var(--lima-claro);
+  font-weight: 500;
+}
+
+.enlace-hero:hover {
+  color: var(--blanco);
+}
+
+.hero-conarte .badge-categoria {
+  display: inline-block;
+  background-color: var(--lima);
+  color: var(--grafito);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+}
+
+.detalle-descripcion {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 820px;
+}
+
+.galeria-publica {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.galeria-publica:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(31, 43, 51, 0.2);
+}
+
+.visor img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 6px;
+}

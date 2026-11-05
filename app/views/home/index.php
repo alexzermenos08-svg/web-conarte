@@ -57,11 +57,18 @@
             <div class="row g-4">
                 <?php foreach ($proyectosDestacados as $proyecto): ?>
                     <div class="col-md-6 col-lg-4">
-                        <div class="card-conarte">
-                            <span class="badge-categoria"><?= htmlspecialchars($proyecto['categoria_nombre']) ?></span>
-                            <h3><?= htmlspecialchars($proyecto['nombre']) ?></h3>
-                            <p class="card-ubicacion mb-2"><i class="bi bi-geo-alt"></i> <?= htmlspecialchars($proyecto['ubicacion']) ?></p>
-                            <p><?= htmlspecialchars($proyecto['descripcion']) ?></p>
+                        <div class="card-conarte card-proyecto">
+                            <?php if (!empty($proyecto['portada'])): ?>
+                                <a href="<?= BASE_URL ?>/proyectos/ver/<?= (int) $proyecto['id_proyecto'] ?>">
+                                    <img class="card-foto" loading="lazy" src="<?= BASE_URL . '/' . Html::e($proyecto['portada']) ?>" alt="<?= Html::e($proyecto['nombre']) ?>">
+                                </a>
+                            <?php endif; ?>
+                            <div class="card-cuerpo">
+                                <span class="badge-categoria"><?= Html::e($proyecto['categoria_nombre']) ?></span>
+                                <a class="card-enlace" href="<?= BASE_URL ?>/proyectos/ver/<?= (int) $proyecto['id_proyecto'] ?>"><h3><?= Html::e($proyecto['nombre']) ?></h3></a>
+                                <?php if ($proyecto['ubicacion']): ?><p class="card-ubicacion mb-2"><i class="bi bi-geo-alt"></i> <?= Html::e($proyecto['ubicacion']) ?></p><?php endif; ?>
+                                <p><?= Html::e($proyecto['descripcion']) ?></p>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
